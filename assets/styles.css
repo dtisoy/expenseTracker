@@ -52,13 +52,12 @@ body {
 }
 
 .h2,
-.balance-title .money {
-  font-size: 4rem;
+.money {
+  font-size: 3.3rem;
 }
 
-.h3,
-.money {
-  font-size: 3rem;
+.h3 {
+  font-size: 2.7rem;
 }
 
 .h2::after,
@@ -83,4 +82,35 @@ body {
 
 .negative {
   color: var(--negative-color);
+}
+
+.v-divider {
+  height: 55px;
+  border-left: 2px solid gainsboro;
+}
+
+/* Add new transaction */
+
+.add-transaction-form {
+  margin-top: 5rem;
+}
+
+.t-normal {
+  font-size: 2.5rem;
+}
+
+.d-block {
+  display: block;
+  width: 100%;
+}
+
+.btn {
+  margin-top: 3rem;
+}
+
+.amount-label::after {
+  content: "(negative - expense, positive - income)";
+  display: block;
+  font-size: medium;
+  margin-top: -1.5rem;
 }

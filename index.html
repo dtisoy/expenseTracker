@@ -20,11 +20,36 @@
             <h3 class="h3">Income</h3>
             <p class="money positive">0</p>
           </div>
+          <div class="v-divider"></div>
           <div>
             <h3 class="h3">Expense</h3>
             <p class="money negative">0</p>
           </div>
         </div>
+      </section>
+      <section class="add-transaction-form component-section">
+        <h2 class="h2">Add New Transaction</h2>
+        <form>
+          <label class="t-normal d-block amount-label" for="amount"
+            >Amount:</label
+          >
+          <input
+            class="t-normal d-block"
+            type="text"
+            id="amount"
+            name="amount"
+          />
+          <label class="t-normal d-block" for="description"
+            >Description:
+          </label>
+          <input
+            class="t-normal d-block"
+            type="text"
+            id="description"
+            name="transaction-description"
+          />
+          <button class="btn t-normal d-block">Add transaction</button>
+        </form>
       </section>
     </main>
   </body>
