@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
+
+/* variables */
+:root {
+  --bg-color: #f7f7f7;
+  --bg-card-color: #fff;
+  --positive-color: green;
+  --negative-color: red;
+}
+/* css reset */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: "NTR", sans-serif;
+}
+
+.main-title {
+  font-size: 4rem;
+  text-align: center;
+}
+
+.component-section {
+  max-width: 600px;
+  margin: auto;
+}
+
+/* balance */
+
+.balance {
+  background-color: var(--bg-card-color);
+  border-radius: 5px;
+}
+
+.balance-title {
+  width: fit-content;
+  margin: auto;
+}
+
+.h3,
+.h2,
+.money {
+  line-height: 4rem;
+}
+
+.h2,
+.balance-title .money {
+  font-size: 4rem;
+}
+
+.h3,
+.money {
+  font-size: 3rem;
+}
+
+.h2::after,
+.h3::after {
+  content: ": ";
+}
+
+.balance-description {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.money::before {
+  content: "$ ";
+  font-style: italic;
+}
+
+.positive {
+  color: var(--positive-color);
+}
+
+.negative {
+  color: var(--negative-color);
+}
