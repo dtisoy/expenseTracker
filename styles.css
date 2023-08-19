@@ -2,10 +2,12 @@
 
 /* variables */
 :root {
-  --bg-color: #f7f7f7;
-  --bg-card-color: #fff;
+  --bg-color: #ffffff;
+  --bg-card-color: #d1d3d4;
   --positive-color: green;
   --negative-color: red;
+  --border-color: #1a1a1a;
+  --hl-color: #dce359;
 }
 /* css reset */
 * {
@@ -31,6 +33,7 @@ body {
 .component-section {
   max-width: 600px;
   margin: auto;
+  margin-bottom: 3rem;
 }
 
 /* balance */
@@ -38,6 +41,7 @@ body {
 .balance {
   background-color: var(--bg-card-color);
   border-radius: 5px;
+  padding: 1rem 0;
 }
 
 .balance-title {
@@ -86,13 +90,29 @@ body {
 
 .v-divider {
   height: 55px;
-  border-left: 2px solid gainsboro;
+  border-left: 2px solid var(--border-color);
 }
 
+.divider-line {
+  max-width: 590px;
+  margin: 0 auto 3rem auto;
+
+  border-color: var(--border-color);
+}
 /* Add new transaction */
 
-.add-transaction-form {
-  margin-top: 5rem;
+.btn,
+.transaction-form input {
+  font-size: 16px;
+  line-height: 28px;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+.transaction-form input {
+  border: 1px solid var(--border-color);
+  outline-color: var(--hl-color);
+  background-color: #fff;
 }
 
 .t-normal {
@@ -105,6 +125,10 @@ body {
 }
 
 .btn {
+  background-color: var(--hl-color);
+  max-width: 400px;
+  margin: auto;
+  border: unset;
   margin-top: 3rem;
 }
 
@@ -113,4 +137,11 @@ body {
   display: block;
   font-size: medium;
   margin-top: -1.5rem;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    margin: auto;
+  }
 }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Expense Tracker</title>
     <meta name="description" content="expense tracker aplication" />
-    <link rel="stylesheet" href="/assets/styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <main class="container">
@@ -13,7 +13,7 @@
       <section class="balance component-section">
         <div class="balance-title">
           <h2 class="h2">Balance</h2>
-          <p class="money">0</p>
+          <p class="money" id="balance-total">0</p>
         </div>
         <div class="balance-description">
           <div>
@@ -27,15 +27,16 @@
           </div>
         </div>
       </section>
-      <section class="add-transaction-form component-section">
+      <hr class="divider-line" />
+      <section class="component-section">
         <h2 class="h2">Add New Transaction</h2>
-        <form>
+        <form class="transaction-form" autocomplete="off">
           <label class="t-normal d-block amount-label" for="amount"
             >Amount:</label
           >
           <input
             class="t-normal d-block"
-            type="text"
+            type="number"
             id="amount"
             name="amount"
           />
@@ -48,8 +49,14 @@
             id="description"
             name="transaction-description"
           />
-          <button class="btn t-normal d-block">Add transaction</button>
         </form>
+        <button class="btn t-normal d-block" id="add-transaction">
+          Add transaction
+        </button>
+      </section>
+      <hr class="divider-line" />
+      <section class="list-transaction-section component-section">
+        <h2 class="h2">Trasaction List</h2>
       </section>
     </main>
   </body>
