@@ -145,3 +145,23 @@ body {
     margin: auto;
   }
 }
+/* History cards section */
+.card {
+  margin: 0;
+  background-color: var(--bg-card-color);
+  border-radius: 5px;
+  padding: 0 0.7rem;
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-content li {
+  list-style: none;
+}
+
+.card-content li:last-child {
+  font-style: italic;
+}
