@@ -1,23 +1,19 @@
 /*script to manage saved data*/
-import { txtBalance, txtIncome, txtExpense, addTransactionRow } from "./module.js";
+import { userExpenseData, txtBalance, txtIncome, txtExpense, addTransactionRow, getUserData, saveSesionData } from "./module.js";
 /* DOM variables */
 
 
 /* workflow */
-let userExpenseData = getUserData();
-
+// no user data stored then set default data
 if (!userExpenseData) {
     setDefaultSchema();
     userExpenseData = getUserData();
 }
+
 showData(userExpenseData);
 
 
 /* funtions */
-function getUserData() {
-    let data = localStorage.getItem("userExpenseData");
-    return JSON.parse(data);
-}
 function setDefaultSchema() {
     let expenseTrackerSchema = {
         balance: 0,
@@ -26,9 +22,7 @@ function setDefaultSchema() {
         transactions: [
         ]
     }
-
-    let jsonStr = JSON.stringify(expenseTrackerSchema);
-    localStorage.setItem("userExpenseData", jsonStr);
+    saveSesionData(expenseTrackerSchema);
 }
 
 function showData({ balance, expense, income, transactions }) {
