@@ -1,5 +1,5 @@
 /*script to manage saved data*/
-import { userExpenseData, txtBalance, txtIncome, txtExpense, addTransactionRow, getUserData, saveSesionData } from "./module.js";
+import { userExpenseData, getUserData, saveSesionData, showData } from "./module.js";
 /* DOM variables */
 
 
@@ -25,16 +25,4 @@ function setDefaultSchema() {
     saveSesionData(expenseTrackerSchema);
 }
 
-function showData({ balance, expense, income, transactions }) {
-    txtBalance.textContent = balance;
-    txtExpense.textContent = expense;
-    txtIncome.textContent = income;
-    showTransactionList(transactions)
 
-}
-
-function showTransactionList(list) {
-    list.forEach(({ amount, description }) => {
-        addTransactionRow(amount, description)
-    });
-}
