@@ -1,12 +1,15 @@
-import { getHtmlIds, addTransactionRow, saveTransaction } from "./module.js";
+import { getHtmlIds, saveTransaction, saveSesionData, userExpenseData, updateExpenseData, showData } from "./module.js";
 const btnAddTransaction = getHtmlIds("add-transaction");
 /* form input */
 const inpAmount = getHtmlIds("amount");
 const inpDescription = getHtmlIds("description");
 
 const updateTransaction = (amount, description) => {
-    addTransactionRow(amount, description);
-    saveTransaction(amount, description)
+    saveTransaction(amount, description);
+    updateExpenseData(userExpenseData);
+    saveSesionData(userExpenseData);
+    showData(userExpenseData);
+
 
 }
 
