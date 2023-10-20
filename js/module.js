@@ -7,7 +7,23 @@ let txtExpense = getHtmlIds("expense-total");
 
 
 function getUserData() {
+
+    const setDefaultSchema = () => {
+        let expenseTrackerSchema = {
+            balance: 0,
+            expense: 0,
+            income: 0,
+            transactions: [
+            ]
+        }
+        saveSesionData(expenseTrackerSchema);
+    }
+
     let data = localStorage.getItem("userExpenseData");
+    if (!data) {
+        setDefaultSchema();
+        return getUserData();
+    }
     return JSON.parse(data);
 }
 
@@ -45,15 +61,13 @@ function updateExpenseData(userExpense) {
     userExpense.transactions.forEach(({ amount }) => {
         money.push(parseInt(amount));
     });
-    // get balance
     // a, c -> accumulator, current value
-    userExpense.balance = money.reduce((a, c) => a + c);
+    // get balance
+    userExpense.balance = money.reduce((a, c) => a + c, 0);
     // get income
-    userExpense.income = money.filter(n => n > 0).reduce((a, c) => a + c);
+    userExpense.income = money.filter(n => n > 0).reduce((a, c) => a + c, 0);
     // get expense 
-    userExpense.expense = money.filter(n => n < 0).reduce((a, c) => a + c);
-
-
+    userExpense.expense = money.filter(n => n < 0).reduce((a, c) => a + c, 0);
 }
 
 function saveSesionData(data) {
